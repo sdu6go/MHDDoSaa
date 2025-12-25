@@ -14,7 +14,7 @@ on:
         type: number
 
 jobs:
-  loadtest:
+  ran:
     runs-on: ubuntu-latest
 
     strategy:
@@ -35,6 +35,6 @@ jobs:
           timeout $TIME python3 2.py \
             --url "${{ inputs.url }}" \
             --rps "${{ inputs.rps }}" \
-            --durations "$((TIME+60))s" \
+            --durations "$((TIME+60))" \
             --connections 50 \
             --workers 350
